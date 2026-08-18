@@ -15,6 +15,8 @@ class Aibris < Formula
 
       def install
         bin.install "aibris"
+        generate_completions_from_executable(bin/"aibris", "completion")
+        man1.install Dir["release-assets/man/*.1"]
       end
     end
     if Hardware::CPU.arm?
@@ -23,6 +25,8 @@ class Aibris < Formula
 
       def install
         bin.install "aibris"
+        generate_completions_from_executable(bin/"aibris", "completion")
+        man1.install Dir["release-assets/man/*.1"]
       end
     end
   end
@@ -34,6 +38,8 @@ class Aibris < Formula
 
       def install
         bin.install "aibris"
+        generate_completions_from_executable(bin/"aibris", "completion")
+        man1.install Dir["release-assets/man/*.1"]
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
@@ -42,6 +48,8 @@ class Aibris < Formula
 
       def install
         bin.install "aibris"
+        generate_completions_from_executable(bin/"aibris", "completion")
+        man1.install Dir["release-assets/man/*.1"]
       end
     end
   end
