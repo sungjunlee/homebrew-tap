@@ -5,13 +5,13 @@
 class Aibris < Formula
   desc "Clean filesystem leftovers from AI coding agents"
   homepage "https://github.com/sungjunlee/aibris"
-  version "0.12.2"
+  version "0.12.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.2/aibris_darwin_amd64.tar.gz"
-      sha256 "d6050164e922336615abcbd7c45dbc950c906d73434a32f512a496c524216543"
+      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.3/aibris_darwin_amd64.tar.gz"
+      sha256 "0aea40867c3d367895b3168bca965a4950cafc3d79c47101fd58736d6c573c33"
 
       define_method(:install) do
         bin.install "aibris"
@@ -20,8 +20,8 @@ class Aibris < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.2/aibris_darwin_arm64.tar.gz"
-      sha256 "da4612a553967d5bc029deb0da92d0aab68452be46feff767b18dcc1379a6551"
+      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.3/aibris_darwin_arm64.tar.gz"
+      sha256 "baf4e3bbef798272a860739e02aff6c9585a40c9f24c71eb8877e90f5326db94"
 
       define_method(:install) do
         bin.install "aibris"
@@ -33,8 +33,8 @@ class Aibris < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.2/aibris_linux_amd64.tar.gz"
-      sha256 "b5dbcaf2b6f8377cc3a120322fc1d70899150b008f8eb057bd10edb0bba8a6a3"
+      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.3/aibris_linux_amd64.tar.gz"
+      sha256 "0f39cc198a20250d5d1b4336ffdff0e6f8704a5645c01236df9c3dc793d5a68c"
       define_method(:install) do
         bin.install "aibris"
         generate_completions_from_executable(bin/"aibris", "completion")
@@ -42,8 +42,8 @@ class Aibris < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.2/aibris_linux_arm64.tar.gz"
-      sha256 "3300a63f087eb1d58c642b7504cc10786d1ff4034fa468463d8d1fd7410d869f"
+      url "https://github.com/sungjunlee/aibris/releases/download/v0.12.3/aibris_linux_arm64.tar.gz"
+      sha256 "2286fc1d378ad4e3faa475387f01ca0c2118e8ec60344d86cf82ba73c7275921"
       define_method(:install) do
         bin.install "aibris"
         generate_completions_from_executable(bin/"aibris", "completion")
@@ -53,6 +53,6 @@ class Aibris < Formula
   end
 
   test do
-    assert_match "aibris version 0.12.2", shell_output("#{bin}/aibris --version")
+    assert_match "aibris version 0.12.3", shell_output("#{bin}/aibris --version")
   end
 end
